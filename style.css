@@ -1,0 +1,139 @@
+/* 1. تعريف الخطوط المخصصة */
+@font-face {
+    font-family: 'Pickyside';
+    src: url('c:/Users/chenna/Desktop/New folder (2)/PickysideRegular-vn7w4.otf');
+}
+
+@font-face {
+    font-family: 'CustomFont2';
+    src: url('c:/Users/chenna/Desktop/New folder (2)/a-thuluth-regular/A Thuluth Regular/A Thuluth Regular.ttf');
+}
+
+@font-face {
+    font-family: 'CustomFont3';
+    src: url('fonts/Font3.ttf');
+}
+
+/* 2. تنسيق الجسم (Body) */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* 3. حاوية الموقع (Glassmorphism + RGB Border) */
+.container {
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+    
+    /* تأثير الزجاج */
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 30px;
+
+    /* تأثير حدود RGB */
+    border: 5px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+                      linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    
+    /* تحريك الألوان */
+    background-size: 100% 100%, 400% 400%;
+    animation: moveRGB 5s linear infinite;
+    
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* 4. حركة الـ RGB */
+@keyframes moveRGB {
+    0% { background-position: 0% 50%, 0% 50%; }
+    50% { background-position: 0% 50%, 100% 50%; }
+    100% { background-position: 0% 50%, 0% 50%; }
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #4CAF50;
+    font-size: 28px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 100%;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+/* 5. زر التوليد الفخم */
+button#generateBtn {
+    width: 100%;
+    padding: 15px 25px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #00dbde, #fc00ff);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+button#generateBtn:hover {
+    box-shadow: 0 6px 20px rgba(252, 0, 255, 0.5);
+    letter-spacing: 2px;
+    transform: translateY(-2px);
+}
+
+/* 6. النتيجة */
+#result {
+    font-size: 48px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 25px;
+    min-height: 70px;
+    transition: 0.3s;
+}
+
+/* 7. زر النسخ */
+#copyBtn {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    display: none; /* يظهر بواسطة JS */
+    transition: 0.3s;
+}
+
+#copyBtn:hover {
+    background: #555;
+}
