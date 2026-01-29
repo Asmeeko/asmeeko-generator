@@ -94,3 +94,17 @@ document.getElementById("copyBtn").addEventListener("click", () => {
     navigator.clipboard.writeText(resultEl.textContent);
     alert("تم النسخ! ✅");
 });
+const modeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+modeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    // تغيير شكل الزر بين الشمس والقمر
+    if (body.classList.contains('dark-mode')) {
+        modeToggle.textContent = '☀️';
+    } else {
+        modeToggle.textContent = '🌙';
+    }
+});
+
