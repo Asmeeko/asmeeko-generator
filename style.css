@@ -136,4 +136,30 @@ button#generateBtn:hover {
 
 #copyBtn:hover {
     background: #555;
+
+}
+/* تنسيق زر التبديل */
+.mode-btn {
+    position: fixed; /* ليبقى ثابتاً في الزاوية */
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+/* الألوان عند تفعيل الوضع الليلي */
+body.dark-mode {
+    background: #121212 !important; /* خلفية سوداء */
+    color: #ffffff;
+}
+
+body.dark-mode .container {
+    background: rgba(0, 0, 0, 0.7); /* زجاج غامق */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 }
